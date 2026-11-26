@@ -31,7 +31,7 @@ function resolveCredentials(): { bearer: string } | { apiKey: string } {
 
   if (!credential) {
     throw new TmdbError(
-      "Missing TMDB credentials. Set TMDB_ACCESS_TOKEN (or TMDB_API_KEY) in .env.local. See .env.example.",
+      "Missing TMDB credentials. Set TMDB_ACCESS_TOKEN (or TMDB_API_KEY) in .env.local for local development, or in the hosting provider's environment variables for deploys (pages are prerendered, so the build needs it too). See .env.example.",
       401,
     );
   }

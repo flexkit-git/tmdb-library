@@ -66,7 +66,7 @@ Either TMDB credential works: the "API Read Access Token" or the shorter "API Ke
 
 ## Deploying
 
-The app deploys to Vercel as is. Set `TMDB_ACCESS_TOKEN` in the project's environment variables before the first build: pages are prerendered, so the build itself calls TMDB.
+The app deploys to Netlify (or Vercel) as is. Set `TMDB_ACCESS_TOKEN` in the project's environment variables before the first build, and make sure it is available to builds as well as functions: pages are prerendered, so the build itself calls TMDB. Without it, `next build` fails while prerendering with "Missing TMDB credentials". If the variable is added after a failed deploy, trigger a new deploy so the build picks it up.
 
 ## With more time
 
